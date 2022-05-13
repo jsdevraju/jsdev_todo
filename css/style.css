@@ -1,0 +1,175 @@
+/* Import Google Font - Lato */
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* Css Variable */
+:root {
+  --primary-color: #79dae8;
+  --gradient-color: linear-gradient(135deg, #c4ddff, #c4ddff);
+  --white-color: #fff;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --gray-color: #999;
+  --dark-gray: #bfbfbf;
+  --gray-white: #f1f1f1;
+  --dark-white: #f5f5f5;
+  --primary-font: "Lato", sans-serif;
+}
+/* Reset Css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--primary-font);
+}
+/* Body Styles */
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--gradient-color);
+}
+::selection {
+  color: var(--white-color);
+  background: var(--primary-color);
+}
+/* Main Styles */
+.wrapper {
+  max-width: 405px;
+  padding: 28px 0 30px;
+  margin: 137px auto;
+  background: var(--white-color);
+  border-radius: 7px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.taskInput {
+  height: 52px;
+  padding: 0 25px;
+  position: relative;
+}
+
+.taskInput input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 0 20px 0 53px;
+  border: 1px solid #999;
+}
+.taskInput input:focus,
+.taskInput input.active {
+  padding-left: 52px;
+  border: 2px solid var(--primary-color);
+}
+.taskInput input::placeholder {
+  color: #bfbfbf;
+}
+.controls,
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.controls {
+  padding: 18px 25px;
+  border-bottom: 1px solid #ccc;
+}
+.filters span {
+  margin: 0 8px;
+  font-size: 17px;
+  color: #444444;
+  cursor: pointer;
+}
+.filters span:first-child {
+  margin-left: 0;
+}
+.filters span.active {
+  color: var(--primary-color);
+}
+.clearBtn {
+  border: none;
+  opacity: 0.6;
+  outline: none;
+  color: var(--white-color);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 7px 13px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+  transition: transform 0.25s ease;
+  background: #eb5353;
+}
+.edit{
+  color: var(--dark-gray);
+}
+.delete{
+  color: #eb5353;
+}
+
+.taskBox {
+  margin-top: 20px;
+  margin-right: 5px;
+  padding: 0 20px 10px 25px;
+}
+.taskBox.overflow {
+  overflow-y: auto;
+  max-height: 300px;
+}
+.taskBox::-webkit-scrollbar {
+  width: 5px;
+}
+.taskBox::-webkit-scrollbar-track {
+  background: var(--gray-white);
+  border-radius: 25px;
+}
+.taskBox::-webkit-scrollbar-thumb {
+  background: #e6e6e6;
+  border-radius: 25px;
+}
+.taskBox .task {
+  list-style: none;
+  font-size: 17px;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  align-items: flex-start;
+  border-bottom: 1px solid #ccc;
+}
+.taskBox .task:last-child {
+  margin-bottom: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+input[type="checkbox"]:checked + p {
+  text-decoration: line-through;
+}
+.taskMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.taskMenu i {font-size: 0.8em;margin-right: 0.5em;}
+
+@media (max-width: 400px) {
+  body {
+    padding: 0 10px;
+  }
+  .wrapper {
+    padding: 20px 0;
+  }
+  .filters span {
+    margin: 0 5px;
+  }
+  .taskInput {
+    padding: 0 20px;
+  }
+  .controls {
+    padding: 18px 20px;
+  }
+  .taskBox {
+    margin-top: 20px;
+    margin-right: 5px;
+    padding: 0 15px 10px 20px;
+  }
+  .task label input {
+    margin-top: 4px;
+  }
+}
