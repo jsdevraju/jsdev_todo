@@ -62,7 +62,7 @@ clearBtn.addEventListener("click", () => {
 todoInput.addEventListener("keyup", (e) => {
   let todo = todoInput.value.trim();
   // If user click enter button on keyboard something going on here
-  if (e.key === "Enter") {
+  if (e.key === "Enter" && todo) {
     if (!isEditTask) {
       todos = !todos ? [] : todos;
       let addTodo = { name: todo, status: "pending" };
