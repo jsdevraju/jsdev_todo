@@ -15,7 +15,8 @@ let todos = JSON.parse(localStorage.getItem("todo-list"));
 const showTodo = () => {
   let liTag = "";
   if (todos) {
-    todos.forEach((todo, id) => {
+    const revdata = todos.reverse()
+    revdata.forEach((todo, id) => {
       // html template
       liTag += `<li class="task">
                     <input type="checkbox" id="${id}" class='checkBoxInput'>
